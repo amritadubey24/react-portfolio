@@ -1,0 +1,220 @@
+// home banner css start 
+
+.icc_bannerBlock--wrapper {
+    // background-image: url('../../images/banner-new.jpg');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // min-height: 450px;
+
+    // &::after {
+    //     content: '';
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     background: #00000057;
+    //     left: 0;
+    //     top: 0;
+    // }
+
+    &.common_banner {
+        position: relative;
+        background: $primary-color;
+        z-index: 1;
+        min-height: 263px;
+
+        &::after {
+            content: '';
+            background: url("../../images/patter-designe.png") center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .icc_bannerContent {
+            h1 {
+                color: $white;
+            }
+
+            .breadcrumb {
+                background: #FFFFFF1F;
+                border: 1px solid #003366;
+                border-radius: 35px;
+                padding: 6px 14px;
+                max-width: fit-content;
+                gap: 32px;
+
+                li {
+                    @include text($secondary-color, 13px, 19.5px, 600);
+                    padding: 0;
+                    position: relative;
+
+                    &::before {
+                        background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.80003 4.32795L5.92803 3.19995L10.728 7.99995L5.92803 12.8L4.80003 11.672L8.46403 7.99995L4.80003 4.32795Z" fill="white"/></svg>') center no-repeat;
+                        background-size: cover;
+                        content: "";
+                        width: 16px;
+                        position: absolute;
+                        height: 16px;
+                        left: -25px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    &:first-child {
+                        &::before {
+                            content: unset;
+                        }
+                    }
+
+                    a {
+                        color: $white;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .icc_imageBlock {
+            position: absolute;
+            bottom: 0;
+            right: 11%;
+        }
+    }
+
+    .icc_bannerContent {
+        .icc_tagline {
+            border: 1px solid #0033664D;
+            background: linear-gradient(0deg, rgba(0, 51, 102, 0.04), rgba(0, 51, 102, 0.04));
+            @include text($primary-color, 13px, 19.5px, 500);
+            padding: 4px 12px;
+            border-radius: 35px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        h1 {
+            @include text($text-color, 44px, 55px, 700);
+            position: relative;
+            margin-bottom: 24px;
+
+            span {
+                color: $primary-color;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5913 22.428L30.1555 6.86377' stroke='%23FCD96B' stroke-width='2.91829' stroke-linecap='round'/%3E%3Cpath d='M17.5094 28.4029H36.1302' stroke='%23FCD96B' stroke-width='2.91829' stroke-linecap='round'/%3E%3Cpath d='M9.31038 20.6207V1.99993' stroke='%23FCD96B' stroke-width='2.91829' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+                    position: absolute;
+                    top: -18px;
+                    width: 38px;
+                    height: 38px;
+                    right: -30px;
+                }
+            }
+        }
+
+        p {
+            @include text($text-color, 18px, 32px, 400);
+        }
+
+        .icc_buttonBlock {
+            margin-top: 50px;
+        }
+    }
+
+    .icc_imageBlock {
+        img {
+            width: 100%;
+            border-radius: 30px;
+        }
+    }
+}
+
+
+// Responsive Css Here 
+
+@media only screen and (max-width: 1366px) {
+    .icc_bannerBlock--wrapper {
+        .icc_bannerContent {
+            h1 {
+                font-size: 38px;
+                line-height: 48px;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .icc_buttonBlock {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .icc_bannerBlock--wrapper {
+        .icc_bannerContent {
+            .icc_tagline {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 34px;
+                line-height: 44px;
+            }
+
+            p {
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+    }
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .icc_bannerBlock--wrapper {
+        .icc_imageBlock {
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .icc_bannerBlock--wrapper {
+        &.common_banner {
+            .icc_bannerContent {
+                .breadcrumb {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .icc_bannerContent {
+            text-align: center;
+
+            .icc_buttonBlock {
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+
+        .icc_imageBlock {
+            margin-top: 25px;
+        }
+    }
+}

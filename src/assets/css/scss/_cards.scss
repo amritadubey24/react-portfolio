@@ -1,0 +1,1530 @@
+// card slider css start here
+.icc_cardSlider--wrapper {
+    @include bg-color;
+
+    .upcoming-program {
+        padding-bottom: 40px;
+    }
+}
+
+.icc_cardBlock {
+    box-shadow: 0px 14px 30px 0px #0033660a;
+    background: $white;
+    border-radius: 16px;
+    padding: 4px 4px;
+    transition: $transition;
+
+    &:hover {
+        box-shadow: 0px 14px 30px 0px #00336624;
+
+        .icc_cardImage {
+            .redirect_icon {
+                display: block;
+            }
+        }
+
+        .icc_cardContent {
+            .icc_cardTitle {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .icc_cardImage {
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        .redirect_icon {
+            display: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='20' fill='%23FCD96B'/%3E%3Cg clip-path='url(%23clip0_12_405)'%3E%3Cpath d='M24.0471 24.3811V14.9531H14.619L14.6042 16.6177L21.2039 16.6177L14.0297 23.7919L15.2082 24.9704L22.3824 17.7962L22.3824 24.3959L24.0471 24.3811Z' fill='%23111111'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_12_405'%3E%3Crect width='20' height='20' fill='white' transform='translate(10 10)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .icc_cardContent {
+        padding: 20px 16px;
+
+        .icc_cardTitle {
+            @include text($text-color, 18px, 30px, 600);
+        }
+
+        .icc_cardsubTitle {
+            @include text($text-color, 14px, 21px, 400);
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            li {
+                @include text(#6f9293, 12px, 26px, 400);
+                position: relative;
+
+                &::after {
+                    content: "";
+                    background-color: #6f9293;
+                    width: 5px;
+                    height: 5px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-radius: 50%;
+                    margin-left: 5px;
+                }
+
+                &:last-child {
+                    &::after {
+                        content: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// card slider css end here
+
+// Service card css start here
+
+.icc_serviceCard--block {
+    ul {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+
+        .icc_serviceCard {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                background: linear-gradient(180deg,
+                        rgba(0, 0, 0, 0) 56.21%,
+                        rgba(0, 0, 0, 0.3) 62.78%,
+                        #000000 100%);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+                border-radius: 20px;
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                .icc_cardContent {
+                    .service_des {
+                        transform: translateY(0);
+                        opacity: 1;
+                        height: auto;
+                    }
+
+                    .service_name {
+                        transform: translateY(-10px);
+                    }
+                }
+
+                &::before {
+                    background: linear-gradient(180deg,
+                            rgba(0, 0, 0, 0.2) 56.21%,
+                            rgba(0, 0, 0, 0.5) 62.78%,
+                            #000000 100%);
+                }
+
+                .icc_cardImage {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .icc_cardImage {
+                border-radius: 20px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                    transition: transform 0.3s ease;
+                }
+            }
+
+            .icc_cardContent {
+                position: absolute;
+                z-index: 2;
+                bottom: 0;
+                padding: 30px 30px;
+                width: 100%;
+
+                .service_des {
+                    @include text($white, 14px, 21px, 400);
+                    transform: translateY(100%);
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                    opacity: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+
+                .service_name {
+                    @include text($white, 20px, 30px, 600);
+                    position: relative;
+                    transform: translateY(0);
+                    transition: transform 0.3s ease;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        background-image: url("data:image/svg+xml,%3Csvg width='94' height='8' viewBox='0 0 94 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.23529L6.75 4.61765C10.2991 6.70534 14.7009 6.70534 18.25 4.61765V4.61765C21.7991 2.52995 26.2009 2.52995 29.75 4.61765V4.61765C33.2991 6.70534 37.7009 6.70534 41.25 4.61765V4.61765C44.7991 2.52995 49.2009 2.52995 52.75 4.61765V4.61765C56.2991 6.70534 60.7009 6.70534 64.25 4.61765V4.61765C67.7991 2.52995 72.2009 2.52995 75.75 4.61765V4.61765C79.2991 6.70534 83.7009 6.70534 87.25 4.61765L93 1.23529' stroke='%23FCD96B' stroke-width='2.02941'/%3E%3C/svg%3E%0A");
+                        width: 92px;
+                        height: 7px;
+                        top: -15px;
+                    }
+                }
+            }
+        }
+
+
+
+        // .icc_serviceCard {
+        //     position: relative;
+        //     border-radius: 20px;
+        //     &::before {
+        //         content: "";
+        //         background: linear-gradient(
+        //             180deg,
+        //             rgba(0, 0, 0, 0) 56.21%,
+        //             rgba(0, 0, 0, 0.3) 62.78%,
+        //             #000000 100%
+        //         );
+        //         width: 100%;
+        //         height: 100%;
+        //         position: absolute;
+        //         z-index: 1;
+        //         border-radius: 20px;
+        //     }
+        //     &:hover {
+        //         .icc_cardContent {
+        //             .service_des{
+        //                 display: block;
+        //                 transition: opacity 0.3s ease; // Fade-in effect for description
+        //                 opacity: 1;
+        //             }
+        //         }
+        //         &::before {
+        //             background: linear-gradient(
+        //                 180deg,
+        //                 rgba(0, 0, 0, 0.2) 56.21%,
+        //                 rgba(0, 0, 0, 0.3) 62.78%,
+        //                 #000000 100%
+        //             );
+        //         }
+        //         .icc_cardImage {
+        //             img {
+        //                 transform: scale(1.1);
+        //             }
+        //         }
+        //     }
+        //     .icc_cardImage {
+        //         border-radius: 20px;
+        //         overflow: hidden;
+        //         img {
+        //             width: 100%;
+        //             border-radius: 20px;
+        //             transition: $transition;
+        //         }
+        //     }
+        //     .icc_cardContent {
+        //         position: absolute;
+        //         z-index: 1;
+        //         bottom: 0;
+        //         padding: 30px 30px;
+        //         width: 100%;
+        //         .service_des{
+        //             @include text($white, 14xpx, 21px, 400);
+        //             display: none;
+        //             opacity: 0;
+        //             box-sizing: border-box;
+        //             margin-top: 24px;
+        //         }
+        //         .service_name {
+        //             @include text($white, 20px, 30px, 600);
+        //             position: relative;
+        //             &:before {
+        //                 content: "";
+        //                 position: absolute;
+        //                 background-image: url("data:image/svg+xml,%3Csvg width='94' height='8' viewBox='0 0 94 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.23529L6.75 4.61765C10.2991 6.70534 14.7009 6.70534 18.25 4.61765V4.61765C21.7991 2.52995 26.2009 2.52995 29.75 4.61765V4.61765C33.2991 6.70534 37.7009 6.70534 41.25 4.61765V4.61765C44.7991 2.52995 49.2009 2.52995 52.75 4.61765V4.61765C56.2991 6.70534 60.7009 6.70534 64.25 4.61765V4.61765C67.7991 2.52995 72.2009 2.52995 75.75 4.61765V4.61765C79.2991 6.70534 83.7009 6.70534 87.25 4.61765L93 1.23529' stroke='%23FCD96B' stroke-width='2.02941'/%3E%3C/svg%3E%0A");
+        //                 width: 92px;
+        //                 height: 7px;
+        //                 top: -15px;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+}
+
+// Service card css end here
+
+// Circlum Large card css start here
+.icc_serviceCardContent--block {
+    ul {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+
+        .icc_serviceCard {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                background: linear-gradient(180deg,
+                        rgba(0, 0, 0, 0) 56.21%,
+                        rgba(0, 0, 0, 0.3) 62.78%,
+                        #000000 100%);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+                border-radius: 20px;
+            }
+
+            &:hover {
+                &::before {
+                    background: linear-gradient(180deg,
+                            rgba(0, 0, 0, 0.2) 56.21%,
+                            rgba(0, 0, 0, 0.3) 62.78%,
+                            #000000 100%);
+                }
+
+                .icc_cardImage {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .icc_cardContent {
+                    bottom: 0;
+
+                    p {
+                        display: block;
+                    }
+                }
+            }
+
+            .icc_cardImage {
+                border-radius: 20px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                    transition: $transition;
+                }
+            }
+
+            .icc_cardContent {
+                position: absolute;
+                z-index: 1;
+                bottom: -25px;
+                padding: 30px 30px;
+                width: 100%;
+                transition: $transition;
+
+                h4 {
+                    @include text($white, 20px, 20px, 600);
+                    position: relative;
+                    margin-bottom: 24px;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        background-image: url("data:image/svg+xml,%3Csvg width='94' height='8' viewBox='0 0 94 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.23529L6.75 4.61765C10.2991 6.70534 14.7009 6.70534 18.25 4.61765V4.61765C21.7991 2.52995 26.2009 2.52995 29.75 4.61765V4.61765C33.2991 6.70534 37.7009 6.70534 41.25 4.61765V4.61765C44.7991 2.52995 49.2009 2.52995 52.75 4.61765V4.61765C56.2991 6.70534 60.7009 6.70534 64.25 4.61765V4.61765C67.7991 2.52995 72.2009 2.52995 75.75 4.61765V4.61765C79.2991 6.70534 83.7009 6.70534 87.25 4.61765L93 1.23529' stroke='%23FCD96B' stroke-width='2.02941'/%3E%3C/svg%3E%0A");
+                        width: 92px;
+                        height: 7px;
+                        top: -24px;
+                    }
+                }
+
+                p {
+                    @include text($white, 14px, 22px, 400);
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// newsletter card css start here
+
+.icc_newsletterBlock--wrapper {
+    .icc_newsletterBlock--inner {
+        background: $primary-color;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 50px 50px;
+        border-radius: 24px;
+        position: relative;
+
+        &.before_unset {
+            z-index: 1;
+
+            &::before {
+                content: '';
+                background: url('../../images/patter-designe.png') center no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .icc_titleBlock {
+            margin-bottom: 0;
+        }
+
+        .icc_buttonBlock {
+            padding-top: 60px;
+        }
+
+        .icc_newsletterForm {
+            min-width: 462px;
+            position: relative;
+
+            .form-control {
+                border-radius: 40px;
+                padding: 4px 24px;
+                min-height: 52px;
+                background-color: $white;
+                @include text(#54626f, 14px, 21px, 500);
+                outline: none;
+                border: none;
+
+                &:focus,
+                &:focus-visible,
+                &:hover {
+                    box-shadow: none;
+                    outline: none;
+                    border: none;
+                }
+            }
+
+            .btn {
+                position: absolute;
+                top: 50%;
+                right: 3px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+// newsletter card css end here
+
+// Additional Services Card Css Start Here
+
+.icc_service_cardBlock {
+    ul {
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        li {
+            width: calc(100% / 3 - 20px);
+
+            .icc_cardService--block {
+                box-shadow: 0px 14px 30px 0px #0000000a;
+                border: 1px solid #00336633;
+                border-radius: 20px;
+                padding: 11.2px 20px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+
+                .icc_card--content {
+                    p {
+                        @include text($text-color, 16px, 24px, 500);
+                    }
+                }
+
+                .icc_card--icon {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+// Additional Services Card Css End Here
+
+// Card with Bg and White Wrapper Start
+
+.card_with_bg_img--wrapper {
+    position: relative;
+    background: $primary-color;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        background: url("../../images/patter-designe.png") center no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .card_with_bg_img--inner {
+        .row {
+            row-gap: 20px;
+        }
+
+        .card-wrapper {
+            background: $white;
+            border-radius: 16px;
+            padding: 4px;
+            min-height: 100%;
+
+            .card-image {
+                img {
+                    border-radius: 16px;
+                    width: 100%;
+                }
+            }
+
+            .card-content {
+                padding: 24px;
+                text-align: center;
+
+                h4 {
+                    @include text($text-color-card, 20px, 30px, 600);
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    @include text($text-color-card, 16px, 28px, 400);
+
+                    &.notify_content {
+                        background: #FCD96B4D;
+                        text-align: center;
+                        border-radius: 10px;
+                        padding: 12px 12px;
+                        margin-top: 14px;
+
+                        a {
+                            color: $primary-color;
+                            font-weight: 600;
+                            text-decoration: underline;
+
+                            &:hover {
+                                opacity: .8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// card with only content start
+
+.card_with_content--wrapper {
+    .card_with_content--inner {
+        .row {
+            row-gap: 30px;
+        }
+
+        .card-wrapper {
+            background: $white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #00336633;
+            box-shadow: 0px 14px 30px 0px #0000000a;
+            min-height: 100%;
+
+            h4 {
+                @include text($text-color-card, 20px, 30px, 600);
+                position: relative;
+                padding-bottom: 20px;
+                margin-bottom: 24px;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background-image: url("data:image/svg+xml,%3Csvg width='94' height='8' viewBox='0 0 94 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.23529L6.75 4.61765C10.2991 6.70534 14.7009 6.70534 18.25 4.61765V4.61765C21.7991 2.52995 26.2009 2.52995 29.75 4.61765V4.61765C33.2991 6.70534 37.7009 6.70534 41.25 4.61765V4.61765C44.7991 2.52995 49.2009 2.52995 52.75 4.61765V4.61765C56.2991 6.70534 60.7009 6.70534 64.25 4.61765V4.61765C67.7991 2.52995 72.2009 2.52995 75.75 4.61765V4.61765C79.2991 6.70534 83.7009 6.70534 87.25 4.61765L93 1.23529' stroke='%23FCD96B' stroke-width='2.02941'/%3E%3C/svg%3E%0A");
+                    width: 92px;
+                    height: 7px;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            p {
+                @include text($text-color-card, 16px, 24px, 400);
+                background: #fcd96b4d;
+                border-radius: 10px;
+                text-align: center;
+                padding: 12px 0;
+
+                a {
+                    font-weight: 600;
+                    text-decoration: underline;
+                    color: $primary-color;
+                }
+            }
+
+            ul {
+                margin-bottom: 24px;
+
+                li {
+                    @include text($text-color-card, 16px, 28px, 400);
+                    padding-left: 22px;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                    span {
+                        font-weight: 600;
+                        color: $primary-color;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    &::after {
+                        width: 10px;
+                        height: 10px;
+                        position: absolute;
+                        left: 0;
+                        top: 9px;
+                        content: "";
+                        border: 1px solid #212931;
+                        border-radius: 100%;
+                    }
+                }
+
+                &.full-card-wrapper {
+                    margin: 0;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+}
+
+//timeline start
+
+.timeline--wrapper {
+    background: linear-gradient(0deg,
+            rgba(0, 51, 102, 0.04),
+            rgba(0, 51, 102, 0.04)),
+        linear-gradient(0deg, #ffffff, #ffffff);
+
+    .timeline--inner {
+        .row {
+            row-gap: 30px;
+        }
+
+        .card-wrapper {
+            background: $white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #00336633;
+            box-shadow: 0px 14px 30px 0px #0000000a;
+            min-height: 100%;
+            margin-bottom: 30px;
+            margin-left: 70px;
+            position: relative;
+
+            &::after {
+                background: url("data:image/svg+xml,%3Csvg width='30' height='31' viewBox='0 0 30 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15.8794' r='13' fill='white' stroke='%23FCD96B' stroke-width='4'/%3E%3C/svg%3E%0A") center no-repeat;
+                background-size: cover;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                content: "";
+                top: 30px;
+                left: -70px;
+            }
+
+            &::before {
+                background: rgba(0, 51, 102, 0.16);
+                width: 3px;
+                min-height: calc(100% - 18px);
+                position: absolute;
+                content: "";
+                top: 70px;
+                left: -56.5px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='31' viewBox='0 0 30 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15.8794' r='15' fill='%23003366'/%3E%3Cpath d='M22.4998 11.8333L12.4998 21.8333L7.9165 17.25L9.0915 16.075L12.4998 19.475L21.3248 10.6583L22.4998 11.8333Z' fill='white'/%3E%3C/svg%3E%0A");
+                }
+
+                &::before {
+                    content: unset;
+                }
+            }
+
+            h4 {
+                @include text($text-color-card, 20px, 30px, 600);
+                position: relative;
+                padding-bottom: 20px;
+                margin-bottom: 24px;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background-image: url("data:image/svg+xml,%3Csvg width='94' height='8' viewBox='0 0 94 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.23529L6.75 4.61765C10.2991 6.70534 14.7009 6.70534 18.25 4.61765V4.61765C21.7991 2.52995 26.2009 2.52995 29.75 4.61765V4.61765C33.2991 6.70534 37.7009 6.70534 41.25 4.61765V4.61765C44.7991 2.52995 49.2009 2.52995 52.75 4.61765V4.61765C56.2991 6.70534 60.7009 6.70534 64.25 4.61765V4.61765C67.7991 2.52995 72.2009 2.52995 75.75 4.61765V4.61765C79.2991 6.70534 83.7009 6.70534 87.25 4.61765L93 1.23529' stroke='%23FCD96B' stroke-width='2.02941'/%3E%3C/svg%3E%0A");
+                    width: 92px;
+                    height: 7px;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            p {
+                @include text($text-color-card, 16px, 24px, 400);
+
+                &.notify_content {
+                    background: #FCD96B4D;
+                    text-align: center;
+                    border-radius: 10px;
+                    padding: 12px 12px;
+                    margin-top: 24px;
+
+                    a {
+                        color: $primary-color;
+                        font-weight: 600;
+                        text-decoration: underline;
+
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+
+            ul {
+                margin-bottom: 24px;
+
+                li {
+                    @include text($text-color-card, 16px, 28px, 400);
+                    padding-left: 22px;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                    span {
+                        font-weight: 600;
+                        color: $primary-color;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    &::after {
+                        width: 10px;
+                        height: 10px;
+                        position: absolute;
+                        left: 0;
+                        top: 9px;
+                        content: "";
+                        border: 1px solid #212931;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// card with bg second
+
+.card_with_bgsecond--wrapper {
+    .card_with_bg_img--inner {
+        .card-wrapper {
+            .card-content {
+                padding: 20px;
+                text-align: left;
+
+                h4 {
+                    @include text($text-color-card, 18px, 18px, 600);
+                    margin-bottom: 14px;
+                }
+
+                p {
+                    @include text($text-color-card, 14px, 21px, 400);
+
+                }
+            }
+        }
+    }
+}
+
+// Image Wrapper Section
+
+.icc_imageCard--wrapper {
+    .image-main-wrapper {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+
+        img {
+            width: calc(50% - 14px);
+        }
+    }
+}
+
+// card with button start
+
+.card_withButton--wrapper {
+    background: $secondary-bg;
+
+    .card_withButton--inner {
+        .card-wrapper {
+            background: $white;
+            padding: 4px;
+            border-radius: 16px;
+            box-shadow: 0px 14px 30px 0px #014d4e0a;
+            min-height: 100%;
+            position: relative;
+            display: flex;
+
+            .card-image {
+                max-width: 40%;
+
+                img {
+                    border-radius: 16px;
+                    min-height: 182px;
+                }
+            }
+
+            .card-content {
+                padding: 24px;
+
+                h4 {
+                    @include text($text-color-card, 20px, 30px, 600);
+                    margin-bottom: 16px
+                }
+
+                p {
+                    @include text($text-color-card, 16px, 28px, 400);
+                }
+
+                .btn {
+                    position: absolute;
+                    bottom: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+// service small card
+.icc_smallServiceCard--wrapper {
+    .icc_serviceCardContent--block {
+        ul {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+    }
+}
+
+
+
+// upcoming movie card css 
+
+.icc_upcomingMovie--wrapper {
+    @include bg-color;
+}
+
+.upcoming_movieBlock {
+    padding: 20px 0 30px;
+
+    .upcoming_movieRow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        .icc_movieCard {
+            box-shadow: 0px 14px 30px 0px #014D4E0A;
+            background-color: $white;
+            border-radius: 16px;
+            padding: 4px 4px;
+
+            .icc_card--content {
+                padding: 20px 16px;
+
+                .card_title {
+                    @include text($text-color, 20px, 30px, 600);
+                }
+
+                p {
+                    @include text($text-color, 14px, 21px, 400);
+                }
+
+                .movie_timeSlot {
+                    display: flex;
+                    // grid-template-columns: repeat(4, 1fr);
+                    gap: 6px;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    margin-bottom: 34px;
+
+                    .time-slot {
+                        border: 1px solid #6F9293;
+                        box-shadow: 0px 14px 30px 0px #014D4E0A;
+                        background-color: $white;
+                        @include text(#6F9293, 12px, 26px, 400);
+                        border-radius: 16px;
+                        padding: 10px 10px;
+                        min-height: 28px;
+                        height: 28px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:last-child {
+                            opacity: 60%;
+                        }
+                    }
+                }
+
+                .icc_buttonBlock {
+                    li {
+                        width: 100%;
+                    }
+
+                    .btn {
+                        width: 100%;
+                        position: relative;
+
+                        span {
+                            @include text($white, 10px, 15px, 500);
+                            position: absolute;
+                            top: -16px;
+                            // padding: 6px 6px;
+                            border-radius: 16px;
+                            min-width: 74px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: #FF8A26;
+                            min-height: 17px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 100%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 0;
+                                height: 0;
+                                border-top: solid 7px #FF8A26;
+                                border-left: solid 7px transparent;
+                                border-right: solid 7px transparent;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .image-block {
+                img {
+                    width: 100%;
+                    border-radius: 16px;
+                }
+            }
+
+        }
+    }
+}
+
+
+// modal css here 
+
+.icc_modal {
+    .modal-dialog {
+        background-color: $white;
+        min-width: 800px;
+        border-radius: 20px;
+
+        .modal-header {
+            background-color: $primary-color;
+            border-radius: 20px 20px 0 0;
+            padding: 25px 24px 40px 24px;
+
+            .modal-title {
+                @include text($white, 20px, 30px, 600);
+            }
+
+            .btn-close {
+                background-image: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='44' height='44' rx='22' fill='white' fill-opacity='0.2'/%3E%3Cpath d='M16.4 29L15 27.6L20.6 22L15 16.4L16.4 15L22 20.6L27.6 15L29 16.4L23.4 22L29 27.6L27.6 29L22 23.4L16.4 29Z' fill='white'/%3E%3C/svg%3E%0A");
+                height: 44px;
+                width: 44px;
+                background-size: 44px 44px;
+                opacity: 1;
+            }
+        }
+
+        .modal-body {
+            .image-block {
+                img {
+                    width: 100%;
+                    border-radius: 16px;
+                }
+            }
+
+            background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+            linear-gradient(0deg, rgba(0, 51, 102, 0.04), rgba(0, 51, 102, 0.04));
+            box-shadow: 0px 26px 40px 0px #0000000A inset;
+            border-radius: 20px;
+            margin-top: -20px;
+            padding: 30px 30px;
+
+            .view_detailContent {
+                .movie_title {
+                    @include text($primary-color, 30px, 55px, 600);
+                }
+
+                .movie_date {
+                    @include text($text-color-card, 16px, 28px, 400);
+                    margin-bottom: 15px;
+                }
+
+                .movie_time {
+                    @include text($text-color-card, 20px, 30px, 600);
+                    margin-bottom: 10px;
+                }
+
+                .movie_des {
+                    @include text($text-color-card, 16px, 28px, 400);
+                }
+
+                .movie_timeSlot {
+                    display: flex;
+                    gap: 6px;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin-bottom: 25px;
+
+                    .time-slot {
+                        border: 1px solid #6F9293;
+                        box-shadow: 0px 14px 30px 0px #014D4E0A;
+                        background-color: $white;
+                        @include text(#6F9293, 12px, 26px, 400);
+                        border-radius: 16px;
+                        padding: 10px 10px;
+                        min-height: 28px;
+                        height: 28px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                .icc_buttonBlock {
+                    margin-top: 30px;
+
+                    li {
+                        width: 100%;
+
+                        .btn {
+                            width: 100%;
+                            position: relative;
+
+                            span {
+                                @include text($white, 10px, 15px, 500);
+                                position: absolute;
+                                top: -16px;
+                                // padding: 6px 6px;
+                                border-radius: 16px;
+                                min-width: 74px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background: #FF8A26;
+                                min-height: 17px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: 0;
+                                    height: 0;
+                                    border-top: solid 7px #FF8A26;
+                                    border-left: solid 7px transparent;
+                                    border-right: solid 7px transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+// Responsive Css Here 
+
+@media only screen and (max-width: 1366px) {
+    .icc_serviceCard--block {
+        ul {
+            .icc_serviceCard {
+                .icc_cardContent {
+                    .service_name {
+                        font-size: 18px;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    .icc_service_cardBlock {
+        ul {
+            li {
+                .icc_cardService--block {
+                    padding: 9.2px 16px;
+
+                    .icc_card--content {
+                        p {
+                            font-size: 15px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .icc_cardBlock {
+        .icc_cardContent {
+            padding: 15px 12px;
+
+            .icc_cardTitle {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            .icc_cardsubTitle {
+                font-size: 13px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    .icc_newsletterBlock--wrapper {
+        .icc_newsletterBlock--inner {
+            .icc_buttonBlock {
+                padding-top: 40px;
+            }
+        }
+    }
+
+    .icc_serviceCard--block {
+        ul {
+            gap: 15px;
+
+            .icc_serviceCard {
+                .icc_cardContent {
+                    padding: 20px 20px;
+
+                    .service_name {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .icc_service_cardBlock {
+        ul {
+            gap: 12px;
+
+            li {
+                .icc_cardService--block {
+                    padding: 9.2px 10px;
+
+                    .icc_card--content {
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .icc_card--icon {
+                        width: 40px;
+                        height: 40px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .icc_serviceCardContent--block {
+        ul {
+            .icc_serviceCard {
+                .icc_cardContent {
+                    h4 {
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .upcoming_movieBlock {
+        .upcoming_movieRow {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .icc_serviceCard--block {
+        ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .icc_service_cardBlock {
+        ul {
+            li {
+                width: calc(100% / 2 - 20px);
+            }
+        }
+    }
+
+    .icc_newsletterBlock--wrapper {
+        .icc_newsletterBlock--inner {
+            padding: 30px 30px;
+
+            .icc_newsletterForm {
+                min-width: 362px;
+            }
+        }
+    }
+
+    .icc_serviceCardContent--block {
+        ul {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+        }
+    }
+
+    .icc_smallServiceCard--wrapper {
+        .icc_serviceCardContent--block {
+            ul {
+                grid-template-columns: repeat(2, 1fr);
+
+                .icc_serviceCard {
+                    .icc_cardContent {
+                        padding: 20px 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .icc_imageCard--wrapper {
+        .image-main-wrapper {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .card_with_bg_img--wrapper {
+        .card_with_bg_img--inner {
+            .card-wrapper {
+                .card-content {
+                    padding: 12px 12px;
+
+                    h4 {
+                        font-size: 18px;
+                        line-height: 26px;
+                        margin-bottom: 8px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .card_with_content--wrapper {
+        .card_with_content--inner {
+            .card-wrapper {
+                padding: 20px 20px;
+
+                p {
+                    font-size: 14px;
+                    padding: 10px 10px;
+                }
+
+                ul {
+                    li {
+                        font-size: 15px;
+                        line-height: 24px;
+                        padding-left: 18px;
+                        margin-bottom: 6px;
+                    }
+
+                    &.full-card-wrapper {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
+            }
+        }
+    }
+
+    .timeline--wrapper {
+        .timeline--inner {
+            .card-wrapper {
+                margin-left: 0;
+                padding: 20px 20px;
+                margin-bottom: 15px;
+
+                h4 {
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+
+                &::before,
+                &::after {
+                    content: unset;
+                }
+            }
+        }
+    }
+
+    .upcoming_movieBlock {
+        .upcoming_movieRow {
+            .icc_movieCard {
+                .icc_card--content {
+                    .icc_buttonBlock {
+                        flex-wrap: wrap;
+                        gap: 25px;
+
+                        li {
+                            width: 100%;
+                        }
+                    }
+
+                    .card_title {
+                        font-size: 18px;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    .icc_modal {
+        .modal-dialog {
+            min-width: auto;
+            margin: 0 auto;
+
+            .modal-header {
+                padding: 14px 14px 26px 14px;
+
+                .modal-title {
+                    font-size: 18px;
+                }
+
+                .btn-close {
+                    height: 32px;
+                    width: 32px;
+                    background-size: 32px 32px;
+                }
+            }
+
+            .modal-body {
+                margin-top: -10px;
+                padding: 16px 16px;
+
+                .view_detailContent {
+                    .movie_title {
+                        font-size: 24px;
+                        line-height: 34px;
+                    }
+
+                    .movie_time {
+                        font-size: 18px;
+                    }
+
+                    .movie_des {
+                        font-size: 15px;
+                        line-height: 24px;
+                    }
+
+                    .movie_date {
+                        font-size: 15px;
+                        margin-bottom: 10px;
+                    }
+
+                    .icc_buttonBlock {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .image-block {
+                    img {
+                        width: auto;
+                        margin: 0 auto;
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+
+    .upcoming_movieBlock {
+        .upcoming_movieRow {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .icc_serviceCard--block {
+        ul {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .icc_service_cardBlock {
+        ul {
+            li {
+                width: 100%;
+            }
+        }
+    }
+
+    .icc_newsletterBlock--wrapper {
+        .icc_newsletterBlock--inner {
+            padding: 20px 20px;
+
+            .icc_newsletterForm {
+                min-width: auto;
+            }
+        }
+    }
+
+    .card_withButton--wrapper {
+        .card_withButton--inner {
+            .card-wrapper {
+                flex-wrap: wrap;
+
+                .card-content {
+                    padding: 12px 12px;
+
+                    h4 {
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+
+                    .btn {
+                        position: relative;
+                        bottom: 0;
+                        margin-top: 15px;
+                    }
+                }
+
+                .card-image {
+                    max-width: 100%;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 182px;
+                        object-fit: fill;
+                        object-position: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .icc_smallServiceCard--wrapper {
+        .icc_serviceCardContent--block {
+            ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}

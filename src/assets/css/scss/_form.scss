@@ -1,0 +1,169 @@
+// Contact Form Css Start Here 
+.icc_contactForm--wrapper{
+    @include bg-color();
+    .icc_contactForm--inner{
+        background: $white;
+        border-radius: 24px;
+        padding: 40px 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        .form_flex{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            li{
+                width: calc(100% / 2);
+                .icc_cardService--block{
+                    border: 1px solid #00336633;
+                    background-color: $white;
+                    border-radius: 20px;
+                    padding: 19px 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    .icc_card--icon{
+                        width: 50px;
+                        height: 50px;
+                    }
+                    .icc_card--content{
+                        p{
+                             @include text($text-color, 18px, 30px, 600);
+                        }
+                        a{
+                             @include text($text-color, 16px, 24px, 400);
+                        }
+                    }
+                }
+            }
+        }
+        .icc_contactForm--block{
+            margin-top: 27px;
+        }
+
+    }
+}
+.icc_contactForm--block{
+    .icc_formBlock{
+        margin-bottom: 16px;
+        label{
+            @include text($text-color, 14px, 21px, 500);
+            margin-bottom: 8px;
+        }
+        .form-control{
+            background: #FFCF591A;
+            border-bottom: 1.5px solid #FFCF5980;
+            @include text(#777777, 12px, 18px, 400);
+            padding: 18px 18px;
+            border-radius: 10px 10px 0 0;
+            &:focus, &:focus-visible, &:hover{
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+    }
+}
+.iti--separate-dial-code .iti__selected-flag {
+  
+    background-color: transparent !important;
+}
+
+.intl-tel-input,
+.iti{
+  width: 100%;
+}
+// Contact Form Css End Here 
+
+
+
+
+// Responsive Css Here 
+
+
+@media only screen and (max-width: 1366px) {
+    .icc_contactForm--wrapper {
+        .icc_contactForm--inner {
+            padding: 30px 30px;
+            .form_flex {
+                li {
+                    .icc_cardService--block {
+                        .icc_card--content {
+                            p {
+                                font-size: 16px;
+                                line-height: 26px;
+                            }
+                            a{
+                                font-size: 14px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .icc_contactForm--block {
+        .icc_formBlock {
+            margin-bottom: 12px;
+            label {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+            .form-control {
+                padding: 12px 14px;
+            }
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width: 768px){
+    .icc_contactForm--wrapper{
+        .icc_contactForm--inner {
+            .form_flex {
+                li {
+                    .icc_cardService--block {
+                        padding: 12px 14px;
+                        .icc_card--content {
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                        .icc_card--icon {
+                            width: 35px;
+                            height: 35px;
+                            img{
+                                width: 35px;
+                                height: 35px;  
+                            }
+                        }
+                    }
+                }
+            }
+         }
+    }
+}
+
+
+
+@media only screen and (max-width: 480px){
+    .icc_contactForm--wrapper {
+        .icc_contactForm--inner {
+            padding: 24px 24px;
+            .form_flex {
+                flex-wrap: wrap;
+                li {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
