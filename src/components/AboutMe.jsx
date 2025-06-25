@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 // Image imports
 import IsaImg from "../assets/images/amrita-pic.jpg";
