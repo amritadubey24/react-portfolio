@@ -3,10 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Works from "./pages/Works";
-import Contact from "./pages/Contact";
-import Services from "./pages/Services";
+import Works from "./components/Works";
+import Contact from "./components/ContactForm";
+import Services from "./components/Services";
+import AboutMe from "./components/AboutMe";
 
 
 function App() {
@@ -16,10 +16,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutMe />} />
         <Route path="/services" element={<Services />} />
         <Route path="/works" element={<Works />} />
-        <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
 
       <Footer />

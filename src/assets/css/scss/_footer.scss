@@ -286,7 +286,32 @@
 
 @media only screen and (max-width: 768px) {}
 
-@media only screen and (max-width: 560px) {}
+@media only screen and (max-width: 580px) {
+    .icc_footer--wrapper {
+        .icc_footer--inner {
+            padding: 20px 0;
+
+            .icc_footerLinks {
+
+                .icc-footerBlock {
+                    margin-top: 30px;
+
+                    .icc_footerlogo {
+                        a {
+                            justify-content: center;
+                        }
+                    }
+
+                    .footer_socialLinks {
+                        ul {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media only screen and (max-width: 420px) {}
 

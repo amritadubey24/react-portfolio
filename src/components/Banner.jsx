@@ -1,5 +1,6 @@
 import React from "react";
-import bannerImage from "../assets/images/amrita-pic.jpg";
+import resumePdf from "../assets/images/Amrita_Dubey_Resume.pdf";
+
 import { Link } from "react-router-dom";
 const Banner = () => {
     return (
@@ -30,14 +31,19 @@ const Banner = () => {
                                 </h1>
                                 <p>Crafting responsive and user-friendly web experiences</p>
                                 <ul className="icc_buttonBlock">
-                                    <li>
+                                    {/* <li>
                                         <Link to="/contact" className="btn btn-primary">Contact Us</Link>
-                                    </li>
+                                    </li> */}
                                     <li>
-                                        <Link href={require("../assets/images/Amrita_Dubey_Resume.pdf")}
+                                        <a
+                                            href={resumePdf}
                                             download="Amrita_Dubey_Resume.pdf"
                                             target="_blank"
-                                            rel="noopener noreferrer" className="btn btn-secondary">Hire Me!</Link>
+                                            rel="noopener noreferrer"
+                                            className="btn btn-primary"
+                                        >
+                                            Download Resume
+                                        </a>
                                     </li>
                                 </ul>
                             </div>

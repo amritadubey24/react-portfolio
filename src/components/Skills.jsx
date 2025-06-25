@@ -5,7 +5,6 @@ import icon3 from '../assets/images/icons/card-icon-3.svg';
 import icon4 from '../assets/images/icons/card-icon-4.svg';
 import icon5 from '../assets/images/icons/card-icon-5.svg';
 import icon6 from '../assets/images/icons/card-icon-6.svg';
-import icon7 from '../assets/images/icons/card-icon-7.svg';
 
 const services_list = [
     { icon: icon1, alt: 'HTML & CSS Responsive Web Design', label: 'HTML & CSS Responsive Web Design' },

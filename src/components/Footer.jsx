@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import whiteLogo from "../assets/images/white-logo.svg"; // adjust the path if needed
 import whiteLogo1 from "../assets/images/fav-white.svg"; // adjust the path if needed
 
 const Footer = () => {
@@ -12,7 +11,7 @@ const Footer = () => {
                 <div className="icc_footer--inner">
                     <div className="icc_footerLinks">
                         <div className="row">
-                            <div className="col-lg-5">
+                            <div className="col-lg-4 col-md-4  col-sm-4">
                                 <div className="icc-footerBlock">
                                     <div className="icc_footerlogo">
                                         <Link to="/">
@@ -22,7 +21,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-7">
+                            <div className="col-lg-8 col-md-8 col-sm-8">
                                 <div className="icc-footerBlock primaryBlock">
                                     <div className="footer_socialLinks">
                                         <ul>

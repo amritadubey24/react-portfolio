@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo1 from "../assets/images/fav.svg"; // adjust path as per your structure
 
 const Header = () => {
+  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50); // change scrollY value as needed
@@ -28,23 +34,27 @@ const Header = () => {
             </div>
 
             {/* Navigation Links */}
-            <ul className="navlinks">
-              <li className="active">
-                <Link to="/">Home</Link>
+            <ul className={`navlinks ${menuOpen ? "active" : ""}`}>
+              <li className={pathname === "/" ? "active" : ""}>
+                <NavLink to="/" end>Home</NavLink>
               </li>
-              <li>
-                <Link to="/about">About Us</Link>
+              <li className={pathname === "/about" ? "active" : ""}>
+                <NavLink to="/about">About Us</NavLink>
               </li>
-              <li><Link to="/services">Services</Link></li>
-              <li> <Link to="/skills">Skills</Link></li>
-              <li> <Link to="/works">Portfolio</Link></li>
-              <li className="mobile-show"><Link to="/contact" className="btn btn-primary">Contact Us</Link></li>
+              <li className={pathname === "/services" ? "active" : ""}>
+                <NavLink to="/services">Services</NavLink>
+              </li>
+              <li className={pathname === "/works" ? "active" : ""}>
+                <NavLink to="/works">Portfolio</NavLink>
+              </li>
             </ul>
-            <ul className="d-flex navicons">
+            {/* <li className="mobile-show"><Link to="/contact" className="btn btn-primary">Contact Us</Link></li> */}
+            {/* <ul className="d-flex navicons">
               <li><Link to="/contact" className="btn btn-primary">Contact Us</Link></li>
-            </ul>
+            </ul> */}
 
-            <div className="icc_mobileToggle">
+            <div className={`icc_mobileToggle ${menuOpen ? "active" : ""}`}
+              onClick={toggleMobileMenu}>
               <Link>
                 <span></span>
                 <span></span>

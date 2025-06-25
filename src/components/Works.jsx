@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Import images
 import Img1 from "../assets/images/work-1.png";
@@ -68,6 +69,9 @@ const Works = () => {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                    <div className="buttonBlock text-center">
+                        <Link to="#" className="btn btn-primary mt-5">Load More</Link>
                     </div>
                 </div>
             </section>

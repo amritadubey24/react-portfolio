@@ -1,4 +1,5 @@
 import React from "react";
+import resumePdf from "../assets/images/Amrita_Dubey_Resume.pdf";
 
 // Image imports
 import IsaImg from "../assets/images/amrita-pic.jpg";
@@ -15,6 +16,17 @@ const AboutMe = () => {
                                 <h2 className="icc_title">About Me!</h2>
                                 <p className="icc_subTitle">I’m a passionate Front-End Developer with over 4+ of hands-on experience delivering dynamic, responsive, and user-focused web applications. I specialize in building sleek, high-performance interfaces that elevate digital experiences and drive user engagement. </p>
                                 <p className="icc_subTitle"> Throughout my career, I've collaborated with cross-functional teams on diverse client projects across retail, e-commerce, travel, and healthcare sectors—translating business goals into seamless, accessible, and visually compelling web solutions.</p>
+
+
+                                <a
+                                    href={resumePdf}
+                                    download="Amrita_Dubey_Resume.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-primary mt-5"
+                                >
+                                    Download Resume
+                                </a>
                             </div>
                         </div>
                         <div className="col-lg-5">
