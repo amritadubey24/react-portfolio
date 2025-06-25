@@ -7,6 +7,7 @@ import Works from "./components/Works";
 import Contact from "./components/ContactForm";
 import Services from "./components/Services";
 import AboutMe from "./components/AboutMe";
+import BlogCard from "./components/BlogCard";
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/about" element={<AboutMe />} />
         <Route path="/services" element={<Services />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/blogs" element={<BlogCard />} />
+
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
 

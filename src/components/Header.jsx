@@ -47,6 +47,9 @@ const Header = () => {
               <li className={pathname === "/works" ? "active" : ""}>
                 <NavLink to="/works">Portfolio</NavLink>
               </li>
+              <li className={pathname === "/blogs" ? "active" : ""}>
+                <NavLink to="/blogs">Blogs</NavLink>
+              </li>
             </ul>
             {/* <li className="mobile-show"><Link to="/contact" className="btn btn-primary">Contact Us</Link></li> */}
             {/* <ul className="d-flex navicons">

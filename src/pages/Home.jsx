@@ -6,6 +6,7 @@ import ContactForm from '../components/ContactForm'
 import Services from '../components/Services'
 import Skills from '../components/Skills'
 import Process from '../components/Process'
+import WhyHireMe from '../components/WhyHireMe'
 
 const Home = () => {
     return (
@@ -14,8 +15,11 @@ const Home = () => {
             <AboutMe />
             <Skills />
             <Services />
+            <WhyHireMe />
             <Process />
             <Works />
+
+
             {/* <ContactForm /> */}
         </>
     )

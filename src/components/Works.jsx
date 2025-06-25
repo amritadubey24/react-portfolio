@@ -71,7 +71,7 @@ const Works = () => {
                         </ul>
                     </div>
                     <div className="buttonBlock text-center">
-                        <Link to="#" className="btn btn-primary mt-5">Load More</Link>
+                        <Link to="/works" className="btn btn-primary mt-5">Load More</Link>
                     </div>
                 </div>
             </section>
