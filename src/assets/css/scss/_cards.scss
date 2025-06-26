@@ -512,6 +512,16 @@
             min-height: 100%;
             position: relative;
 
+            &.remove-hover {
+                &:hover {
+                    transition: all .3s ease-in-out;
+
+                    &::before {
+                        content: unset;
+                    }
+                }
+            }
+
             &:hover {
 
                 &:before {

@@ -1,21 +1,4 @@
-1. ✅ Project Case Studies (Not Just Portfolio Cards)
-Why: MNCs look for real-world impact, process, and problem-solving.
 
-🔹 Add 2–3 featured projects with:
-
-Project Goal
-
-Your Role
-
-Tools Used
-
-Challenges & Solutions
-
-Screenshots or short demo
-
-GitHub/live link
-
-🔸 Bonus: Add tags like “React”, “API Integration”, “Responsive”, etc.
 
 2. ✅ Testimonials or Endorsements
 Builds trust and shows professional experience.
@@ -30,12 +13,7 @@ Mentors
 
 Include photo (optional) and name/company.
 
-3. ✅ Professional Resume + Download Button
-Quick access for HRs and recruiters.
-
-Add a “View Resume” and “Download PDF” button in hero or about section.
-
-Highlight key resume points (experience, strengths, achievements).
+\\
 
 4. ✅ Experience Timeline / Career Path
 MNCs value growth and commitment.
@@ -60,40 +38,7 @@ HTML, CSS, JS, React, Git, Bootstrap, etc.
 Separate into categories: Front-End, Tools, Design
 
 
-7. ✅ Certifications & Achievements
-MNCs love verified skills.
 
-List things like:
-
-React certificate from Coursera/Udemy
-
-Frontend Mentor challenges
-
-GitHub streaks or contributions
-
-
-9. ✅ Contact Section with Personality
-Add a short line like:
-"Let's build something great together."
-
-Include:
-
-Contact form
-
-Email
-
-LinkedIn
-
-GitHub
-
-<!-- http://134.209.160.247/garmon-media/ -->
-
-10. ✅ Awards / Recognition (Optional but Impressive)
-Add anything like:
-
-“Top performer in XYZ internship”
-
-“Contributor to open-source projects”
 
 🧠 Bonus UX Tips:
 Use soft animations (scroll-in, fade, hover)
@@ -103,8 +48,3 @@ Keep a clean, modern design
 Responsive on all screen sizes
 
 Dark/light mode (optional but trendy)
-
-🔚 Final Call-to-Action Section:
-Something like:
-“Ready to collaborate or hire me? Let’s connect.”
-Include buttons for LinkedIn, GitHub, and email.

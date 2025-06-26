@@ -361,6 +361,43 @@ section {
     background: $secondary-bg;
 }
 
+.table-dark>tr>th {
+    background-color: $primary-color !important;
+}
+
+tr>td {
+    @include text($text-color-card, 14px, 24px, 400);
+
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    .action-icon {
+        border: 1px solid rgba(0, 51, 102, 0.2);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #ffffff29;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 300;
+        font-size: 14px;
+        color: #111111;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transition: all .3s ease-in-out;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+}
+
 // responsive css start here
 
 

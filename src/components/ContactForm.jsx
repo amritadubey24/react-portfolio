@@ -8,7 +8,7 @@ const ContactForm = () => {
             <div className="container">
                 <div className="icc_titleBlock">
                     <h2 className="icc_title">Get in touch</h2>
-                    <p className="icc_subTitle">We’d Love to Hear from You</p>
+                    <p className="icc_subTitle">Ready to collaborate or hire me? Let’s connect.</p>
                 </div>
 
                 <div className="icc_contactForm--inner">
@@ -37,7 +37,7 @@ const ContactForm = () => {
                         </li>
                     </ul>
 
-                    <div className="icc_contactForm--block">
+                    <div className="icc_contactForm--block d-none">
                         <form>
                             <div className="row">
                                 <div className="col-lg-6 col-md-6">

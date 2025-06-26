@@ -39,7 +39,7 @@ const Header = () => {
                 <NavLink to="/" end>Home</NavLink>
               </li>
               <li className={pathname === "/about" ? "active" : ""}>
-                <NavLink to="/about">About Us</NavLink>
+                <NavLink to="/about">About Us / Awards</NavLink>
               </li>
               <li className={pathname === "/services" ? "active" : ""}>
                 <NavLink to="/services">Services</NavLink>
